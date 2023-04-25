@@ -1,0 +1,653 @@
+@media (max-width: 1024px) {
+    .grid {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .container {
+        padding: 0 30px;
+    }
+
+    .btn {
+        padding: 30px 55px;
+        font-size: 25px;
+    }
+
+    .burger {
+        display: inline-block;
+    }
+
+    .header {
+        &__list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            visibility: hidden;
+            width: 50%;
+            height: 100vh;
+            padding: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            opacity: 0;
+            background-color: #282e51;
+            -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+            -o-transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+            &::before {
+                content: '';
+                width: 60px;
+                height: 60px;
+                background-image: url('../img/logo.svg');
+            }
+            &--active {
+                visibility: visible;
+                opacity: 1;
+                -webkit-transform: translateX(0);
+                    -ms-transform: translateX(0);
+                        transform: translateX(0);
+                -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+                transition: opacity .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+                -o-transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+                transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out;
+                transition: opacity .3s ease-in-out, visibility .3s ease-in-out, transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+            }
+        }
+        &__link {
+            font-size: 35px;
+        }
+    }
+
+    .hero {
+        &__container {
+            row-gap: 50px;
+            padding-bottom: 40px;
+        }
+        &__title {
+            margin-bottom: 0;
+        }
+        &__caption {
+            -ms-grid-row: 2;
+            grid-row: 2;
+            margin-bottom: 50px;
+        }
+        &__descr {
+            margin-bottom: 30px;
+        }
+        &__btn {
+            -ms-flex-item-align: start;
+                -ms-grid-row-align: start;
+                align-self: start;
+        }
+        &-info__list--list {
+            -ms-grid-column-span: 3;
+            grid-column: span 3;
+        }
+
+    }
+
+    %gr-col-8 {
+        -ms-grid-column-span: 8;
+        grid-column: span 8;
+    }
+
+    .about {
+        &__container {
+            padding: 208px 30px 30px;
+        }
+        &__title {
+            @extend %gr-col-8;
+        }
+        &__link {
+            @extend %gr-col-8;
+        }
+    }
+
+    .challenge {
+        &__title {
+            -ms-grid-column-span: 7;
+            grid-column: span 7;
+        }
+        &__img-wrapper {
+            @extend %gr-col-8;
+
+            -ms-grid-row-span: 8;
+
+            grid-row: span 8;
+        }
+        &__descr {
+            -ms-grid-column-span: 6;
+            grid-column: span 6;
+            &:last-child {
+                -ms-grid-column-span: 6;
+                grid-column: span 6;
+            }
+        }
+    }
+    .this {
+        &__container {
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: start;
+        }
+        &__title {
+            text-align: start;
+            -ms-grid-column-span: 7;
+            grid-column: span 7;
+            font-size: 117px;
+            line-height: 1.5em;
+        }
+        &__descr {
+            -ms-grid-row: 2;
+            grid-row: 2;
+        }
+        &__btn {
+            -ms-grid-column-span: 5;
+            grid-column: span 5;
+            -ms-grid-column-align: start;
+                justify-self: start;
+        }
+    }
+    .program {
+        &__title {
+            @extend %gr-col-8
+        }
+        &__item::after {
+            font-size: 160px;
+        }
+    }
+    .teacher {
+        &__container {
+            margin: 0 30px;
+            padding-top: 73px;
+            padding-bottom: 73px;
+        }
+        &__img {
+            max-width: 230px;
+            -ms-grid-row-span: 2;
+            grid-row: span 2;
+        }
+        &__descr {
+            &-name-wrapper {
+                -ms-grid-column-span: 4;
+                grid-column: span 4;
+            }
+            &-experience {
+                -ms-grid-column-span: 4;
+                grid-column: span 4;
+            }
+        }
+    }
+
+    .media {
+        &__title {
+            @extend %gr-col-8;
+        }
+        &__list {
+            @extend %gr-col-8;
+        }
+        &__subtitle {
+            @extend %gr-col-8;
+        }
+        &__item:not(:last-child) {
+            margin-bottom: 200px;
+        }
+    }
+
+    .channels {
+        &__descr--first {
+            -ms-grid-row: 2;
+            grid-row: 2;
+        }
+        &__media-wrapper {
+            @extend %gr-col-8;
+        }
+    }
+
+    .contacts {
+        &__container {
+            justify-items: center;
+        }
+        &__title {
+            @extend %gr-col-8;
+            -ms-grid-row: 1;
+            grid-row: 1;
+            text-align: center
+        }
+        &__list {
+            @extend %gr-col-8;
+            text-align: center;
+        }
+        &__form {
+            @extend %gr-col-8;
+            -ms-grid-row: 2;
+            -ms-grid-row-span: 3;
+            grid-row: 2 / span 3;
+            -ms-grid-column-align: stretch;
+                justify-self: stretch;
+            margin-bottom: 50px;
+        }
+        &__input {
+            padding: 25px 35px;
+            font-size: 33px;
+        }
+        &__btn {
+            width: 100%;
+            -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center;
+        }
+        &__allert-descr {
+            -ms-grid-column-span: 8;
+            grid-column: span 8;
+            -ms-grid-row: 2;
+            grid-row: 2;
+            text-align: center;
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .hero__link {
+        display: none;
+    }
+
+    .channels__media {
+        &-item {
+            -ms-grid-column-span: 2;
+            grid-column: span 2;
+        }
+        &-wrapper {
+            gap: 60px;
+        }
+    }
+
+    .from {
+        &__list {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+        }
+        &__item {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        &__container {
+            row-gap: 30px;
+            &::after {
+                content: none;
+            }
+        }
+        &-info {
+            &__list {
+                -ms-grid-column-span: 8;
+                grid-column: span 8;
+                -ms-grid-row: 4;
+                grid-row: 4;
+                width: 55%;
+            }
+            &__descr {
+                text-align: end;
+            }
+            &__list--list {
+                -ms-grid-row: 5;
+                grid-row: 5;
+            }
+            &__item {
+                width: 100%;
+            }
+        }
+        &__btn {
+            -ms-grid-column-span: 5;
+            grid-column: span 5;
+        }
+    }
+
+    .about__container::before {
+        height: 40%;
+    }
+
+
+    .this__title {
+        font-size: 70px;
+    }
+
+    .program {
+        &__list {
+            position: relative;
+        }
+        &__btn-wrapper {
+            -ms-grid-column-span: 8;
+            grid-column: span 8;
+            padding: 0;
+            background-color: transparent;
+        }
+         .bonus {
+            -ms-grid-column-span: 8;
+            grid-column: span 8;
+            -ms-grid-row-span: 2;
+            grid-row: span 2;
+            &::after {
+                width: 84px;
+                height: 106px;
+            }
+        }
+    }
+
+    .channels__media-caption::before {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contacts__allert-descr {
+        -ms-grid-column-span: 8;
+        grid-column: span 8;
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 8;
+        grid-row: 2 / span 8;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    %gr-col-4{
+        -ms-grid-column-span: 4;
+        grid-column: span 4;
+    }
+
+    .grid {
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .title {
+        font-size: 45px;
+    }
+
+    .header {
+        &__list {
+            padding: 20px;
+        }
+        &__link {
+            font-size: 20px;
+        }
+    }
+
+    .hero {
+        &__container{
+            row-gap: 10px;
+        }
+        &__title{
+            @extend %gr-col-4;
+            margin-bottom: 17px;
+            font-size: 45px;
+        }
+        &__descr{
+            @extend %gr-col-4;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        &__caption{
+            @extend %gr-col-4;
+        }
+        &__btn{
+            @extend %gr-col-4;
+            width: 100%;
+            text-align: center;
+        }
+        &-info{
+            &__list {
+                @extend %gr-col-4;
+                width: 100%;
+            }
+            &__subtitle {
+                @extend %gr-col-4;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+    .about {
+        &__container::before{
+            height: 43%;
+        }
+        &__title{
+            @extend %gr-col-4;
+            margin-bottom: 57px;
+        }
+        &__subtitle{
+            font-weight: 700;
+        }
+        &__descr{
+            @extend %gr-col-4;
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    .challenge {
+        &__title{
+            @extend %gr-col-4;
+        }
+        &__img-wrapper{
+            @extend %gr-col-4;
+        }
+        &__descr{
+            @extend %gr-col-4;
+            &:last-child {
+                @extend %gr-col-4; 
+            }
+        }
+    }
+
+    .this {
+        &__title{
+            @extend %gr-col-4;
+            font-size: 40px;
+        }
+        &__descr{
+            @extend %gr-col-4;
+            font-size: 35px;
+        }
+        &__btn{
+            @extend %gr-col-4;
+            width: 100%;
+        }
+    }
+
+    .program {
+        &__title{
+            grid-column: span 4 !important;
+        }
+        &__descr{
+            font-size: 13px;
+            line-height: 22px;
+        }
+        &__item{
+            -ms-grid-column-span: 2;
+            grid-column: span 2;
+            &::after {
+                bottom: 0;
+            }
+        }
+        .bonus {
+            -ms-grid-column-span: 4;
+            grid-column: span 4;
+            -ms-grid-row-span: 1;
+            grid-row: span 1;
+        }
+
+        .program__btn-wrapper{
+            -ms-grid-column-span: 4;
+            grid-column: span 4;
+        }
+    }
+
+    .teacher {
+        &__img{
+            @extend %gr-col-4;
+            -ms-grid-row: 1;
+            grid-row: 1;
+        }
+        &__descr{
+            &-name-wrapper {
+                @extend %gr-col-4;
+            }
+            &-name-experience {
+                @extend %gr-col-4;
+            }
+        }
+    }
+
+    .media {
+        &__title{
+            @extend %gr-col-4;
+        }
+        &__subtitle{
+            @extend %gr-col-4;
+        }
+        &__list{
+            @extend %gr-col-4;
+        }
+    }
+
+    .channels {
+        &__media{
+            &-caption::before{
+                width: 80px;
+                height: 80px;
+            }
+            &-wrapper{
+                @extend %gr-col-4;
+            }
+            &-item{
+                -ms-grid-column-span: 2;
+                grid-column: span 2;
+            }
+        }
+        &__descr{
+            @extend %gr-col-4;
+            &--first {
+                @extend %gr-col-4;
+            }
+        }
+    }
+
+    .contacts {
+        &__title{
+            @extend %gr-col-4;
+        }
+        &__list{
+            @extend %gr-col-4;
+        }
+        &__form{
+            @extend %gr-col-4;
+        }
+        &__input{
+            font-size: 20px;
+        }
+        &__allert-descr{
+            @extend %gr-col-4;
+        }
+    }
+}
+
+
+@media (max-width: 320px) {
+    $font-size-320px-descr: 15px;
+
+    .title {
+        font-size: 40px;
+    }
+
+    .header {
+        &__list {
+            width: 100%;
+            padding: 30px;
+            &::before {
+                margin-top: 150px;
+            }
+        }
+        &__link {
+            font-size: 30px;
+        }
+    }
+
+    .hero {
+        &__title{
+            font-size: 45px;
+        }
+        &__caption{
+            font-size: 18px;
+        }
+        &-info{
+            &__subtitle {
+                font-size: $font-size-320px-descr;
+            }
+            &__descr {
+                font-size: $font-size-320px-descr;
+            }
+        }
+    }
+
+    .challenge {
+        &__title {
+            font-size: 40px;
+        }
+        &__descr {
+            font-size: $font-size-320px-descr;
+        }
+    }
+
+    .this {
+        &__descr {
+            font-size: $font-size-320px-descr * 2;
+        }
+    }
+    
+    .from {
+        &__item {
+            padding: 20px;
+        }
+        &__descr {
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+
+    .program {
+        &__item {
+            padding: 15px;
+        }
+        &__descr {
+            font-size: 11px;
+        }
+        > .bonus::after {
+            padding: 0;
+        }
+        &__btn-wrapper {
+            padding: 0;
+        }
+    }
+
+    .channels__media-caption {
+        font-size: 12px;
+    }
+}

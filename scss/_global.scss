@@ -1,0 +1,82 @@
+.page {
+    background-image: url('../img/page-bg.jpg');
+    background-size: cover;
+}
+
+.container {
+    max-width: 1070px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.stop-scroll {
+    overflow: hidden;
+}
+
+.btn {
+    padding: 15px 51px;
+    scale: 1;
+    border: none;
+    border-radius: 30.5px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
+    color: #000;
+    background: -o-linear-gradient(306.95deg, #FCA82D 20.13%, #EFC449 85.02%);
+    background: linear-gradient(143.05deg, #FCA82D 20.13%, #EFC449 85.02%);
+    cursor: pointer;
+    -webkit-transition: scale .3s ease-in-out, color .3s ease-in-out;
+    -o-transition: scale .3s ease-in-out, color .3s ease-in-out;
+    transition: scale .3s ease-in-out, color .3s ease-in-out;
+
+    &:hover {
+        scale: 1.07;
+        color: #1d2c4f;
+    };
+
+    &:active {
+        scale: 1;
+        color: var(--color-light);
+        -webkit-transition: scale .1s ease-in-out;
+        -o-transition: scale .1s ease-in-out;
+        transition: scale .1s ease-in-out;
+    };
+
+};
+
+link {
+        width: 64px;
+        height: 64px;
+        position: relative;
+        cursor: pointer;
+        background-image: url('../img/arrow.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 24px;
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: .06;
+        border-radius: 50%;
+        background-color: var(--color-light);
+        -webkit-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    };
+
+    &:hover::after {
+        opacity: 1;
+    }
+};
+
+.title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 60px;
+};

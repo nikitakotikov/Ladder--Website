@@ -1,0 +1,15 @@
+@mixin font-face($font-family, $url, $weight) {
+    @font-face {
+        font-family: '#{$font-family}';
+            src: url('#{$url}.woff2') format('woff2'),
+            url('#{$url}.woff') format('woff');
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: normal;
+    }
+}
+
+@include font-face ('Akrobat', '../fonts/Akrobat-Regular', 500);
+@include font-face ('Akrobat', '../fonts/Akrobat-SemiBold', 600);
+@include font-face ('Akrobat', '../fonts/Akrobat-Bold', 700);
+@include font-face ('Akrobat', '../fonts/Akrobat-ExtraBold', 800);
